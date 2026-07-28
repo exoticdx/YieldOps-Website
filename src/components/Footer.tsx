@@ -37,14 +37,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <motion.a
-                  href="https://cal.com/dax-yeildops/yield-diagnostic"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   whileHover={{ x: 2 }}
                   className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--primary-gold)] transition-colors cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
-                  Book the $99 Audit
+                  Request a Strategy Call
                   <ArrowUpRight className="w-3 h-3" />
                 </motion.a>
               </li>
@@ -66,14 +64,12 @@ export default function Footer() {
           <div className="text-center md:text-right">
             <h4 className="text-sm font-semibold text-[var(--text-primary)] mb-4">Ready to start?</h4>
             <motion.a
-              href="https://cal.com/dax-yeildops/yield-diagnostic"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 apple-button px-5 py-2.5 text-sm font-medium cursor-pointer"
             >
-              Get Your Efficiency Audit
+              Partner With Us
               <ArrowUpRight className="w-4 h-4" />
             </motion.a>
           </div>

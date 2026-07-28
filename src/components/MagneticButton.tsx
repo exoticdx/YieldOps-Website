@@ -12,6 +12,7 @@ interface MagneticButtonProps {
   target?: string;
   rel?: string;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function MagneticButton({ 
@@ -23,6 +24,7 @@ export default function MagneticButton({
   target,
   rel,
   onClick,
+  type,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -56,7 +58,7 @@ export default function MagneticButton({
   if (!isMounted) {
     const Component = as;
     return (
-      <Component className={className} href={as === 'a' ? href : undefined}>
+      <Component className={className} href={as === 'a' ? href : undefined} type={as === 'button' ? type : undefined}>
         {children}
       </Component>
     );
@@ -78,6 +80,7 @@ export default function MagneticButton({
         href={as === 'a' ? href : undefined}
         target={as === 'a' ? target : undefined}
         rel={as === 'a' ? rel : undefined}
+        type={as === 'button' ? type : undefined}
         onClick={onClick}
       >
         {children}

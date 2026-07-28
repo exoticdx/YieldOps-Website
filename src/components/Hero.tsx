@@ -63,15 +63,15 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 glass-badge mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-[var(--primary-gold)]" />
-              <span className="text-sm text-[var(--text-secondary)]">The Anti-Agency</span>
+              <span className="text-sm text-[var(--text-secondary)]">⚡ FOR THE 1% WHO REFUSE TO BE AVERAGE</span>
             </motion.div>
 
             {/* Headline — word-by-word reveal */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] mb-6 text-[var(--text-primary)]">
-              <TextReveal delay={0.3}>Manual work is a tax</TextReveal>
+              <TextReveal delay={0.3}>We build the tech.</TextReveal>
               <br />
               <span className="gradient-text">
-                <TextReveal delay={0.7}>on your revenue.</TextReveal>
+                <TextReveal delay={0.7}>You break the industry.</TextReveal>
               </span>
             </h1>
 
@@ -82,37 +82,35 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
             >
-              We don&apos;t just build software; we <span className="text-[var(--primary-gold)] font-medium">surgically remove the bottlenecks</span> that slow your growth.
+              Renting generic software is for dinosaurs. We engineer custom AI and automation workflows that give your brand an unfair, undeniable advantage.
             </motion.p>
 
-            {/* CTA Button — Magnetic */}
+            {/* CTA Buttons — Magnetic */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <MagneticButton
                 as="a"
-                href="https://cal.com/dax-yeildops/yield-diagnostic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 apple-button px-8 py-4 text-base font-medium cursor-pointer"
+                href="/products"
+                className="inline-flex items-center gap-2 apple-button px-8 py-4 text-base font-medium cursor-pointer w-full sm:w-auto justify-center"
                 intensity={0.4}
               >
-                Start the Diagnostic ($99)
-                <ArrowRight className="w-4 h-4" />
+                Claim Your Unfair Advantage ↗
+              </MagneticButton>
+              <MagneticButton
+                as="a"
+                href="#contact"
+                className="inline-flex items-center gap-2 glass-button px-8 py-4 text-base font-medium cursor-pointer w-full sm:w-auto justify-center"
+                intensity={0.3}
+              >
+                Pitch Us Your Vision
               </MagneticButton>
             </motion.div>
 
-            {/* Money-back guarantee */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.8 }}
-              className="mt-4 text-sm text-[var(--text-muted)]"
-            >
-              100% Money-back guarantee if we don&apos;t find the waste.
-            </motion.p>
+            {/* Money-back guarantee - Removed as per new copy requirements if not requested, but keeping the space if needed. Actually the request didn't mention it, so I'll remove it to stay strictly to the copy provided. */}
           </motion.div>
         </div>
       </motion.div>
@@ -141,7 +139,7 @@ export default function Hero() {
         className="relative z-10 pb-12"
       >
         <p className="text-center text-xs font-medium text-[var(--text-muted)] uppercase tracking-widest mb-6">
-          Trusted By
+          Powered by Enterprise-Grade Infrastructure
         </p>
 
         {/* Scrolling logos */}

@@ -8,6 +8,7 @@ import ManifestoSection from "@/components/ManifestoSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import OtherServicesSection from "@/components/OtherServicesSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       <AboutSection />
       <FAQSection />
       <OtherServicesSection />
+      <ContactSection />
       <Footer />
     </main>
   );

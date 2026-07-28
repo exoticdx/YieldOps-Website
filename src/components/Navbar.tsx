@@ -8,11 +8,9 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from '@/context/ThemeContext';
 
 const homeLinks = [
-  { name: 'Problem', href: '#problem' },
-  { name: 'Process', href: '#process' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'About', href: '#about' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Seller Hub', href: '/ecom' },
+  { name: 'Services', href: '#services' },
+  { name: 'Our Philosophy', href: '#philosophy' },
 ];
 
 const digitalGrowthLinks = [
@@ -87,15 +85,13 @@ export default function Navbar() {
             <motion.a
               href={isDigitalGrowth
                 ? "https://wa.me/919825612393?text=Hi%20YieldOps%2C%20I%20want%20to%20know%20about%20the%20Digital%20Dominance%20Bundle"
-                : "https://cal.com/dax-yeildops/yield-diagnostic"
+                : "#contact"
               }
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="apple-button px-5 py-2.5 text-sm font-medium cursor-pointer"
             >
-              {isDigitalGrowth ? 'Get Bundle' : 'Book Audit'}
+              {isDigitalGrowth ? 'Get Bundle' : 'Partner With Us'}
             </motion.a>
           </div>
         </div>

@@ -29,10 +29,7 @@ export default function TiltCard({ children, className = '', tiltIntensity = 10,
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateX = ((y - centerY) / centerY) * -tiltIntensity;
-    const rotateY = ((x - centerX) / centerX) * tiltIntensity;
-    
-    setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
+    setTransform('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
     setGlowPosition({ x: (x / rect.width) * 100, y: (y / rect.height) * 100 });
   };
 

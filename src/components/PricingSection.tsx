@@ -9,44 +9,47 @@ import MagneticButton from './MagneticButton';
 
 const serviceTiers = [
   {
-    name: 'Targeted Automation',
-    subtitle: 'The Quick Win',
-    icon: Settings,
-    description: 'Best for fixing a single, painful bottleneck in your workflow.',
+    name: 'YieldOps Studio',
+    subtitle: 'Premium Delivery Infrastructure for Luxury Photographers.',
+    icon: LayoutDashboard,
+    description: 'AI Face-Recognition galleries, zero-markup Cloudflare storage, and commission-free e-commerce built on your custom domain.',
     features: [
-      'Backend automation',
-      'Error reduction',
-      'Standard delivery'
+      'AI Face-Recognition',
+      'Zero-markup storage',
+      'Custom domain e-commerce'
     ],
-    priceLabel: 'Entry Level',
+    priceLabel: 'Visit YieldOps Studio ↗',
+    buttonLink: 'https://studio.yieldops.com',
     popular: false,
     from: { x: -50, y: 30 },
   },
   {
-    name: 'Workflow Ecosystem',
-    subtitle: 'The Standard',
-    icon: LayoutDashboard,
-    description: 'A complete overhaul of a business process to maximize yield.',
+    name: 'YieldOps Local',
+    subtitle: 'Omnichannel Dominance for Brick & Mortar.',
+    icon: Zap,
+    description: 'We engineer high-converting local ecosystems. Google Maps profile optimization, integrated websites, and unified social media routing.',
     features: [
-      'Full process automation',
-      'Custom dashboard',
-      'Staff training & handover'
+      'Google Maps SEO',
+      'Integrated websites',
+      'Unified social routing'
     ],
-    priceLabel: 'Custom Quoted',
+    priceLabel: 'Explore Local Solutions ↗',
+    buttonLink: 'https://local.yieldops.com',
     popular: true,
     from: { x: 0, y: 50 },
   },
   {
-    name: 'Priority Transformation',
-    subtitle: 'The White Glove',
-    icon: Zap,
-    description: 'For businesses that need the problem solved yesterday.',
+    name: 'YieldOps Automate',
+    subtitle: 'Custom AI Workflows & Business Systems.',
+    icon: Settings,
+    description: 'Stop doing robotic work. We build custom CRM pipelines, AI chat agents, and automated data processing to scale your operations without increasing headcount.',
     features: [
-      'Everything in Standard',
-      'Expedited 5-day delivery',
-      '90 days priority support'
+      'Custom CRM pipelines',
+      'AI chat agents',
+      'Automated data processing'
     ],
-    priceLabel: 'Custom Quoted',
+    priceLabel: 'See Automation Services ↗',
+    buttonLink: 'https://automate.yieldops.com',
     popular: false,
     from: { x: 50, y: 30 },
   }
@@ -84,31 +87,19 @@ function ServiceCard({ tier, index }: { tier: typeof serviceTiers[0]; index: num
             }`}>
               <IconComponent className={`w-5 h-5 ${tier.popular ? 'text-[#1d1d1f]' : 'text-[var(--primary-gold)]'}`} />
             </div>
-            
-            {tier.popular && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.5 }}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--primary-gold)] text-sm font-medium text-[#1d1d1f] whitespace-nowrap"
-              >
-                <Star className="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" />
-                Most Common
-              </motion.div>
-            )}
           </div>
 
           {/* Tier name */}
-          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">
+          <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-1">
             {tier.name}
           </h3>
-          <p className="text-sm text-[var(--text-muted)] mb-4">{tier.subtitle}</p>
+          <p className="text-sm text-[var(--text-muted)] mb-4 leading-relaxed font-medium">{tier.subtitle}</p>
 
           {/* Description */}
           <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6">{tier.description}</p>
 
           {/* Features */}
-          <ul className="space-y-3 mb-6">
+          <ul className="space-y-3 mb-8">
             {tier.features.map((feature, featureIndex) => (
               <motion.li 
                 key={featureIndex} 
@@ -123,14 +114,19 @@ function ServiceCard({ tier, index }: { tier: typeof serviceTiers[0]; index: num
             ))}
           </ul>
 
-          {/* Price Label */}
-          <div className={`py-2.5 px-4 rounded-xl text-center text-sm font-medium ${
-            tier.popular 
-              ? 'bg-[var(--primary-gold)]/10 text-[var(--primary-gold)]' 
-              : 'bg-[var(--surface-light)] text-[var(--text-secondary)]'
-          }`}>
+          {/* CTA Link */}
+          <a 
+            href={tier.buttonLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block w-full py-3 px-4 rounded-xl text-center text-sm font-semibold transition-all duration-300 ${
+              tier.popular 
+                ? 'bg-[var(--primary-gold)] text-[#1d1d1f] hover:bg-[var(--primary-gold-dim)]' 
+                : 'bg-[var(--surface-light)] text-[var(--text-primary)] hover:bg-[var(--border)] border border-[var(--border)]'
+            }`}
+          >
             {tier.priceLabel}
-          </div>
+          </a>
         </div>
       </TiltCard>
     </motion.div>
@@ -142,7 +138,7 @@ export default function PricingSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="pricing" className="py-24 px-6 bg-[var(--background-secondary)]">
+    <section id="products" className="py-24 px-6 bg-[var(--background-secondary)]">
       <div className="max-w-5xl mx-auto">
         {/* Section Header — fades up with scale */}
         <motion.div
@@ -152,15 +148,14 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-medium text-[var(--primary-gold)] uppercase tracking-wide mb-3">
-            Service Menu
+          <p className="text-sm font-medium text-[var(--primary-gold)] uppercase tracking-widest mb-3">
+            The Divisions
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--text-primary)] mb-4">
-            Invest in outcomes, not hours
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-6">
+            Choose Your Front
           </h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            We build custom solutions tailored to your specific bottlenecks. 
-            You receive a fixed-price quote after your Efficiency Audit.
+            We don&apos;t just build software. We engineer systems that scale your operations without increasing your headcount.
           </p>
         </motion.div>
 
@@ -170,29 +165,6 @@ export default function PricingSection() {
             <ServiceCard key={index} tier={tier} index={index} />
           ))}
         </div>
-
-        {/* Bottom CTA — Magnetic */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <p className="text-[var(--text-muted)] text-sm mb-6">
-            Your exact price depends on the complexity of the problem we find.
-          </p>
-          <MagneticButton
-            as="a"
-            href="https://cal.com/dax-yeildops/yield-diagnostic"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 apple-button px-8 py-4 text-base font-medium cursor-pointer"
-            intensity={0.35}
-          >
-            Book Diagnostic ($99) to Get Your Quote
-            <ArrowRight className="w-4 h-4" />
-          </MagneticButton>
-        </motion.div>
       </div>
     </section>
   );
